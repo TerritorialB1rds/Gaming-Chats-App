@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gaming Chats</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="topbar">
+    <img src="favicon.ico" id="favicon" alt="logo" />
+    <span id="title">Gaming Chats</span>
+    <button id="logout-btn" style="display:none;">Logout</button>
+  </div>
+  <div id="container">
+    <div id="auth">
+      <form id="loginForm">
+        <h2>Login</h2>
+        <input id="login-username" placeholder="Username" required>
+        <input id="login-password" type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <div id="login-error" class="error"></div>
+      </form>
+      <form id="registerForm" enctype="multipart/form-data">
+        <h2>Register</h2>
+        <input id="register-username" placeholder="Username" required>
+        <input id="register-password" type="password" placeholder="Password" required>
+        <label>Upload PFP: <input id="register-pfp" type="file" accept="image/*"></label>
+        <select id="register-avatar">
+          <option value="">Or choose avatar</option>
+          <option value="/default-pfp.png">Default</option>
+          <option value="/avatars/avatar1.png">Gamer 1</option>
+          <option value="/avatars/avatar2.png">Gamer 2</option>
+        </select>
+        <button type="submit">Register</button>
+        <div id="register-error" class="error"></div>
+      </form>
+    </div>
+    <div id="main-app" style="display:none;">
+      <div id="sidebar">
+        <div id="channels"></div>
+        <div id="dms"></div>
+      </div>
+      <div id="chat-area">
+        <div id="user-info">
+          <img id="pfp" src="/default-pfp.png" alt="pfp" width="32" height="32">
+          <span id="user-label"></span>
+        </div>
+        <div id="chat">
+          <div id="messages"></div>
+          <form id="msg-form" autocomplete="off">
+            <input id="msg" placeholder="Type message..." autocomplete="off" />
+            <input id="file-input" type="file" accept="image/*" style="display:none;">
+            <button type="button" id="img-btn">📷</button>
+            <button type="submit" id="send-btn">Send</button>
+          </form>
+        </div>
+        <div id="voice">
+          <button id="start-voice-btn">Start Voice Call</button>
+          <button id="leave-voice-btn" style="display:none;">Leave Voice Call</button>
+          <button id="mute-btn" style="display:none;">Mute</button>
+          <button id="unmute-btn" style="display:none;">Unmute</button>
+          <audio id="remoteAudio" autoplay></audio>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

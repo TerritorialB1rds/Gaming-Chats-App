@@ -1,0 +1,13 @@
+{
+  "name": "gaming-chats-app-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "bad-words": "^3.0.4",
+    "bcrypt": "^5.1.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0"
+  }
+}
